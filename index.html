@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Walk & Sound 🌍</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{
+    font-family:Arial;
+    text-align:center;
+    background:#f4f4f4;
+}
+.card{
+    background:white;
+    padding:20px;
+    margin:20px auto;
+    max-width:400px;
+    border-radius:10px;
+}
+button{
+    padding:10px;
+    border:none;
+    background:black;
+    color:white;
+    cursor:pointer;
+}
+</style>
+</head>
+<body>
+
+<h1>🌍 Walk & Sound</h1>
+
+<div class="card">
+<input type="number" id="steps" placeholder="Pasos del día">
+<button onclick="addSteps()">Agregar</button>
+
+<h3>Total mensual: <span id="total">0</span></h3>
+</div>
+
+<script>
+let total = 0;
+
+function addSteps(){
+    let steps = parseInt(document.getElementById("steps").value);
+    if(!isNaN(steps)){
+        total += steps;
+        document.getElementById("total").innerText = total;
+    }
+}
+</script>
+
+</body>
+</html>
